@@ -9,7 +9,7 @@ func main() {
 	hobby[0] = "basketball"
 	hobby[1] = "football"
 
-	c := map[string]int{"Hello":1, "World":2}
+	c := map[string]int{"Hello":1, "World":2}  //map类型
 	for k, v := range c{
 		fmt.Println(k, v)
 	}
