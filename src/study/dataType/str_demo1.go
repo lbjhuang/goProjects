@@ -19,7 +19,7 @@ func main() {
 	age = 18
 	salary = 18888.89
 	var hobby = [2]string{} //数组
-	var personnel = make([]string, 8)  //切片
+	var personnel = make([]string, 8)  //切片，长度为8
 	hobby[0] = "basketball"
 	hobby[1] = "football"
 
