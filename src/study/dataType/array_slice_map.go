@@ -13,6 +13,7 @@ func main() {
 	for k, v := range c{
 		fmt.Println(k, v)
 	}
+	fmt.Println(len(c))
 
 	//hobby[2] = "football"
 	personnel[0] = "sunny"
