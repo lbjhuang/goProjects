@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df9ed3f5-ac9f-4445-b084-bd52f1aff0b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/study/dataType/array_slice_map.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/study/dataType/str_demo1.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/study/dataType/str_demo1.go" afterDir="false" />
     </list>
@@ -57,7 +59,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build str_demo1.go (1)">
+  <component name="RunManager" selected="Go Build.go build array_demo1.go">
+    <configuration name="go build array_demo1.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goProject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/src/study/dataType/array_demo1.go" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build iota_demo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goProject" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -82,8 +92,19 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build study/dataType" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goProject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/src/study/dataType/array_demo1.go" />
+      <package value="study/dataType" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build array_demo1.go" />
+        <item itemvalue="Go Build.go build study/dataType" />
         <item itemvalue="Go Build.go build str_demo1.go (1)" />
         <item itemvalue="Go Build.go build iota_demo.go" />
         <item itemvalue="Go Build.go build str_demo1.go" />
@@ -98,7 +119,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
