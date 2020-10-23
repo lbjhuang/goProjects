@@ -14,6 +14,9 @@ func main() {
 	hobby[1] = "kind"
 	hobby[2] = "kind"
 	hobby[3] = "kind"
+	hobby = append(hobby, "man")  //追加元素  长度增加，容量自动扩充
+	hobby = append(hobby, "man")  //追加元素  长度增加，容量自动扩充
+
 
 	fmt.Println(hobby)
 	fmt.Println(personnel)
