@@ -9,7 +9,7 @@ var name string
 var age int
 var salary float32
 
-const country = "China"  //常量
+const country = "China"  //常量定义
 const (n1 = 100
        n2   //没定义则跟上一个变量一致
 )
