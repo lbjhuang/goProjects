@@ -7,7 +7,7 @@ func main() {
 	//ch1, ch2 :=make(chan int,2),make(chan int)    //ch1有缓冲，不发生死锁
 	go func() {
 		ch1 <-1
-		ch2 <-0
+		ch2 <-28
 	}()
     //<-ch1     //ch1管道无缓冲，注释了本行则ch1数据没有被其他go程读走，发生死锁
 	var b =<-ch2
