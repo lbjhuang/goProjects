@@ -7,8 +7,8 @@ import (
 
 
 func main() {
-	ch := make(chan int, 1) // 注意这里给的容量是1
-	//ch <- 1
+	ch := make(chan int, 2) // 注意这里给的容量是1
+	ch <- 1
 
 	select {
 	case ch <- 1:
