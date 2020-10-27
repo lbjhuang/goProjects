@@ -1,4 +1,4 @@
-.idea/*
+.idea
 .idea/workspace.xml
 *.xml
 src/library_pro/.idea/library_plus.iml
