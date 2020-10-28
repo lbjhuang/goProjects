@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df9ed3f5-ac9f-4445-b084-bd52f1aff0b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,5 +142,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
     <option name="LAST_COMMIT_MESSAGE" value="123" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>https://goproxy.cn</proxy>
   </component>
 </project>
