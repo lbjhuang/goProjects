@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df9ed3f5-ac9f-4445-b084-bd52f1aff0b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/library_pro/controller/UserController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library_pro/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library_pro/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library_pro/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/library_pro/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
