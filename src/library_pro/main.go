@@ -26,7 +26,7 @@ type ERPPerson struct {
 
 
 func main() {
-	fmt.Println(78912)
+	fmt.Println("启动项目...")
 	db, err := sql.Open("mysql", "root:!QAZxsw2@tcp(192.168.109.21:3306)/erp_database")
 	if err != nil {
 		fmt.Print(err.Error())
