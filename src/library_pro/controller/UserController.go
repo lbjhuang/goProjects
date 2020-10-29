@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"time"
+	"library_pro/model"
 )
 
 var db *sql.DB
@@ -20,33 +21,21 @@ func init() {
 }
 
 func InsertOne(context *gin.Context) {
-	//定义一个结构体接受参数
-	type Employee struct {
-		Chinese_name  string `form:"chinese_name" json:"chinese_name" binding:"required"`
-		English_name  string `form:"english_name" json:"english_name" binding:"required"`
-		Position_name string `form:"position_name" json:"position_name" binding:"required"`
-		Birthday      string `form:"birthday" json:"birthday" binding:"required"`
-	}
-	var employee Employee
+	//接受参数
+	var employee model.Employee
 	if context.BindJSON(&employee) != nil {
-		context.JSON(http.StatusOK, gin.H{"status": "参数格式有误"})
+		context.JSON(http.StatusBadRequest, gin.H{"status": "参数格式有误"})
+		return
 	}
-	fmt.Println(employee.Chinese_name)
-	fmt.Println(employee.English_name)
-	fmt.Println(employee.Position_name)
-	fmt.Println(employee.Birthday)
-	//更新数据
+	fmt.Println(employee)
+
+	//插入数据
 	insert_sql := "insert into erp_employee_info (chinese_name,english_name,position_name,birthday,create_time) values (?,?,?,?,?);"
-	//affect_map,_ := database.Exec(db, insert_sql, employee.Chinese_name, employee.English_name, employee.Position_name, employee.Birthday, time.Now().Format("2006-01-02 15:04:05"))
-	affect_map,_:= database.Exec(db, insert_sql, "黄的伟","james","php","1991-08-27","2020-09-08 15:15:18")
+	affect_map := database.Exec(db, insert_sql, employee.Chinese_name, employee.English_name, employee.Position_name, employee.Birthday, time.Now().Format("2006-01-02 15:04:05"))
 	context.JSON(200, gin.H{
 		"result": affect_map,
 	})
 }
-
-
-
-
 
 func GetById(context *gin.Context) {
 	println(">>>> get user by id and name action start <<<<")
@@ -73,6 +62,22 @@ func GetEmployeeList(context *gin.Context) {
 		"result": data_map,
 	})
 }
+
+func UpdateOne(context *gin.Context) {
+	var employee model.Employee
+	if context.BindJSON(&employee) != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"status": "参数格式有误"})
+		return
+	}
+
+	//更新数据
+	insert_sql := "update erp_employee_info set chinese_name = ?, english_name = ?, position_name = ?, status = ?, birthday = ? where id = ?"
+	affect_map := database.Exec(db, insert_sql, employee.Chinese_name, employee.English_name, employee.Position_name, employee.Status, employee.Birthday,employee.Id)
+	context.JSON(200, gin.H{
+		"result": affect_map,
+	})
+}
+
 
 // 跳转html
 func RenderForm(context *gin.Context) {

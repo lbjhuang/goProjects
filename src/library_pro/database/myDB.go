@@ -88,14 +88,13 @@ func SelectSome(db *sql.DB, sql_str string, args ...interface{}) (*[]map[string]
 }
 
 //更新或插入，删除等
-func Exec(db *sql.DB, sql_str string, values ...string) (a int64,b int64) {
-
-	fmt.Println(values)
+func Exec(db *sql.DB, sql_str string, values ...interface{}) (affect map[string]int64) {
 	stmt, err := db.Prepare(sql_str)
 	if err != nil {
 		log.Fatal(err)
 	}
-	res, err := stmt.Exec(values)
+	fmt.Println(values)
+	res, err := stmt.Exec(values...)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -107,6 +106,8 @@ func Exec(db *sql.DB, sql_str string, values ...string) (a int64,b int64) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	return last_id,row_affect
+	affect = map[string]int64{"last_id" : last_id, "row_affect": row_affect}
+
+	return affect
 
 }
