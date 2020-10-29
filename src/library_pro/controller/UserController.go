@@ -2,6 +2,7 @@ package controller
 
 import (
 	"database/sql"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"library_pro/database"
 	_ "library_pro/model"
@@ -30,14 +31,22 @@ func InsertOne(context *gin.Context) {
 	if context.BindJSON(&employee) != nil {
 		context.JSON(http.StatusOK, gin.H{"status": "参数格式有误"})
 	}
-
+	fmt.Println(employee.Chinese_name)
+	fmt.Println(employee.English_name)
+	fmt.Println(employee.Position_name)
+	fmt.Println(employee.Birthday)
 	//更新数据
-	insert_sql := "insert into erp_employee_info (chinese_name,english_name,position_name,birthday,create_time) values (?,?,?,?,?)"
-	affect_map := database.Exec(db, insert_sql, "黄的伟","james","php","1991-08-27","2020-09-08 15:15:18")
+	insert_sql := "insert into erp_employee_info (chinese_name,english_name,position_name,birthday,create_time) values (?,?,?,?,?);"
+	//affect_map,_ := database.Exec(db, insert_sql, employee.Chinese_name, employee.English_name, employee.Position_name, employee.Birthday, time.Now().Format("2006-01-02 15:04:05"))
+	affect_map,_:= database.Exec(db, insert_sql, "黄的伟","james","php","1991-08-27","2020-09-08 15:15:18")
 	context.JSON(200, gin.H{
 		"result": affect_map,
 	})
 }
+
+
+
+
 
 func GetById(context *gin.Context) {
 	println(">>>> get user by id and name action start <<<<")
@@ -51,20 +60,7 @@ func GetById(context *gin.Context) {
 	})
 }
 
-func UpdateById(context *gin.Context) {
-	// 获取请求参数
-	id := context.Param("id")
-	chines_name := context.Param("chines_name")
-	english_name := context.Param("english_name")
-	position_name := context.Param("position_name")
-	status := context.Param("status")
-	//更新数据
-	update_sql := "update erp_employee_info set chines_name = ?,english_name=?,position_name=?,status=? where id = ?"
-	affect_map := database.Exec(db, update_sql, chines_name, english_name, position_name, status, id)
-	context.JSON(200, gin.H{
-		"result": affect_map,
-	})
-}
+
 
 func GetEmployeeList(context *gin.Context) {
 	println(">>>> get user by id and name action start <<<<")
