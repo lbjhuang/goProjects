@@ -78,6 +78,17 @@ func UpdateOne(context *gin.Context) {
 	})
 }
 
+func GetSalary(context *gin.Context) {
+	// 获取请求参数
+	// 查询数据库
+	select_sql := "select a.id,a.chinese_name,b.salary from erp_employee_info a left join erp_employee_salary b on a.id = b.user_id where a.id = 1";
+	data_map, err := database.SelectSome(db, select_sql)
+	checkError(err)
+	context.JSON(200, gin.H{
+		"result": data_map,
+	})
+}
+
 
 // 跳转html
 func RenderForm(context *gin.Context) {

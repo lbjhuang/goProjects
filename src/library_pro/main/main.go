@@ -18,6 +18,7 @@ func main() {
 		employee.GET("/list", controller.GetEmployeeList)
 		employee.POST("/update", controller.UpdateOne)
 		employee.POST("/insert", controller.InsertOne)
+		employee.GET("/salary", controller.GetSalary)
 		//可以自己添加其他，一个请求的路径对应一个函数
 
 	}
