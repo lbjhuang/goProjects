@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	_"github.com/gomodule/redigo/redis"
 	"io"
 	"library_pro/controller"
 	"os"
 	"library_pro/config"
 )
+
 
 func main() {
 	fmt.Println("运行开始...")
@@ -15,6 +17,8 @@ func main() {
 	if err != nil{
 		fmt.Println(err.Error())
 	}
+
+
 	gin.DefaultWriter = io.MultiWriter(f)
 	gin.DefaultErrorWriter = io.MultiWriter(f)
 	// Engin

@@ -9,7 +9,9 @@ import (
 	"strings"
 )
 
-
+/*
+封装一些基本的Mysql数据库操作方法
+ */
 //获取数据库实例
 func GetDataBase() *sql.DB {
 	//mysql 数据库
