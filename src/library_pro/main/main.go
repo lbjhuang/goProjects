@@ -1,16 +1,25 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"io"
 	"library_pro/controller"
+	"os"
+	"library_pro/config"
 )
 
 func main() {
-
+	fmt.Println("运行开始...")
+	f,err :=os.Create(config.RUN_LOG_PATH)
+	if err != nil{
+		fmt.Println(err.Error())
+	}
+	gin.DefaultWriter = io.MultiWriter(f)
+	gin.DefaultErrorWriter = io.MultiWriter(f)
 	// Engin
 	router := gin.Default()
-	//router := gin.New()
-
+	router.Use(gin.Logger(),gin.Recovery())
 	// 路由组
 	employee := router.Group("/employee")
 	{ // 请求参数在请求路径上

@@ -23,12 +23,21 @@ func init() {
 func InsertOne(context *gin.Context) {
 	//接受参数
 	var employee model.Employee
-	if context.BindJSON(&employee) != nil {
-		context.JSON(http.StatusBadRequest, gin.H{"status": "参数格式有误"})
+	if err :=context.ShouldBind(&employee); err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"status": 500,"error":err.Error()})
 		return
 	}
-	fmt.Println(employee)
+	//参数校验
+	if employee.Chinese_name == ""{
+		context.JSON(http.StatusBadRequest, gin.H{"status": 500,"error":"请传入中文名"})
+		return
+	}
+	if employee.English_name == ""{
+		context.JSON(http.StatusBadRequest, gin.H{"status": 500,"error":"请传入英文名"})
+		return
+	}
 
+	fmt.Println(employee)
 	//插入数据
 	insert_sql := "insert into erp_employee_info (chinese_name,english_name,position_name,birthday,create_time) values (?,?,?,?,?);"
 	affect_map := database.Exec(db, insert_sql, employee.Chinese_name, employee.English_name, employee.Position_name, employee.Birthday, time.Now().Format("2006-01-02 15:04:05"))
@@ -65,9 +74,12 @@ func GetEmployeeList(context *gin.Context) {
 
 func UpdateOne(context *gin.Context) {
 	var employee model.Employee
-	if context.BindJSON(&employee) != nil {
-		context.JSON(http.StatusBadRequest, gin.H{"status": "参数格式有误"})
+	if err :=context.ShouldBind(&employee); err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"status": 500,"error":err.Error()})
 		return
+	}
+	if employee.Id == 0{
+		context.JSON(http.StatusBadRequest, gin.H{"status": 500,"error":"请传入ID"})
 	}
 
 	//更新数据

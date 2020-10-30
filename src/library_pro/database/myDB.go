@@ -4,24 +4,17 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	"library_pro/config"
 	"log"
 	"strings"
 )
 
-//数据库的基础信息
-const (
-	userName = "root"
-	password = "root"
-	ip       = "localhost"
-	port     = "3306"
-	dbName   = "erp_database"
-)
 
 //获取数据库实例
 func GetDataBase() *sql.DB {
 	//mysql 数据库
 	//构建连接："用户名:密码@tcp(IP:端口)/数据库?charset=utf8"
-	path := strings.Join([]string{userName, ":", password, "@tcp(", ip, ":", port, ")/", dbName, "?charset=utf8"}, "")
+	path := strings.Join([]string{config.MYSQL_CONFIG["userName"], ":", config.MYSQL_CONFIG["password"], "@tcp(", config.MYSQL_CONFIG["ip"], ":", config.MYSQL_CONFIG["port"], ")/", config.MYSQL_CONFIG["dbName"], "?charset=utf8"}, "")
 	fmt.Println(path)
 	//打开数据库,前者是驱动名，所以要导入： _ "github.com/go-sql-driver/mysql"
 	DB, _ := sql.Open("mysql", path)
