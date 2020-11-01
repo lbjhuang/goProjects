@@ -5,14 +5,15 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"library_pro/database"
+	"library_pro/model"
 	_ "library_pro/model"
 	"log"
 	"net/http"
 	"time"
-	"library_pro/model"
 )
 
 var db *sql.DB
+
 func init() {
 	db = database.GetDataBase()
 	log.Println(">>>> get database connection start <<<<")
@@ -46,11 +47,6 @@ func InsertOne(context *gin.Context) {
 
 func GetById(context *gin.Context) {
 	println(">>>> get user by id and name action start <<<<")
-	//设置不能频繁查询一个人的数据
-
-
-
-
 	// 获取请求参数
 	id := context.Param("id")
 	// 查询数据库

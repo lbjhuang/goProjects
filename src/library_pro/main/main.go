@@ -8,6 +8,7 @@ import (
 	"library_pro/controller"
 	"os"
 	"library_pro/config"
+	"library_pro/middlerware"
 )
 
 
@@ -21,14 +22,15 @@ func main() {
 
 	gin.DefaultWriter = io.MultiWriter(f)
 	gin.DefaultErrorWriter = io.MultiWriter(f)
-	// Engin
+	// Engine
 	router := gin.Default()
 	router.Use(gin.Logger(),gin.Recovery())
 	// 路由组
 	employee := router.Group("/employee")
 	{ // 请求参数在请求路径上
-		employee.GET("/get/:id/", controller.GetById)
-		employee.GET("/list", controller.GetEmployeeList)
+		employee.GET("/get/:id", middlerware.NotOftenVisitUrl, controller.GetById)
+		employee.GET("/list", middlerware.NotOftenVisitUrl, controller.GetEmployeeList)
+
 		employee.POST("/update", controller.UpdateOne)
 		employee.POST("/insert", controller.InsertOne)
 		employee.GET("/salary", controller.GetSalary)
