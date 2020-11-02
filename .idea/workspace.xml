@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df9ed3f5-ac9f-4445-b084-bd52f1aff0b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pkg/mod/cache/download/github.com/aws/aws-sdk-go/@v/list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/library_pro/database/myElasticSearch.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/goProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/library_pro/controller/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/controller/UserController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/download/github.com/golang/protobuf/@v/list" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/mod/cache/download/github.com/golang/protobuf/@v/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/download/github.com/google/go-cmp/@v/list" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/mod/cache/download/github.com/google/go-cmp/@v/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/download/golang.org/x/net/@v/list" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/mod/cache/download/golang.org/x/net/@v/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/download/golang.org/x/sync/@v/list" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/mod/cache/download/golang.org/x/sync/@v/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/download/golang.org/x/sys/@v/list" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/mod/cache/download/golang.org/x/sys/@v/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/download/google.golang.org/genproto/@v/list" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/mod/cache/download/google.golang.org/genproto/@v/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/mod/cache/download/google.golang.org/grpc/@v/list" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/mod/cache/download/google.golang.org/grpc/@v/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/sumdb/sum.golang.org/latest" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/sumdb/sum.golang.org/latest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/config/define.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/config/define.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/controller/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/controller/userController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/library_pro/database/myDB.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/database/myDB.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/database/myRedis.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/database/myRedis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/library_pro/go.sum" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/library_pro/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/library_pro/main/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,6 +90,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="goProject" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build channel.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goProject" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -110,6 +134,13 @@
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/src/study/goroutine/waitGroup.go" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="goProject" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
       <method v="2" />
     </configuration>
     <recent_temporary>
