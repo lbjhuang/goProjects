@@ -5,3 +5,5 @@ src/library_pro/Logs/library_run_log.log
 src/library_pro/go.mod
 src/library_pro/go.sum
 .idea/workspace.xml
+src/library_pro/go.sum
+src/library_pro/go.mod
