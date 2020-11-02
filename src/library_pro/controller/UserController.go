@@ -2,6 +2,7 @@ package controller
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"library_pro/database"
@@ -9,6 +10,7 @@ import (
 	_ "library_pro/model"
 	"log"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -19,6 +21,7 @@ func init() {
 	log.Println(">>>> get database connection start <<<<")
 }
 
+//插入数据到mysql 和 es
 func InsertOne(context *gin.Context) {
 	//接受参数
 	var employee model.Employee
@@ -36,10 +39,31 @@ func InsertOne(context *gin.Context) {
 		return
 	}
 
-	fmt.Println(employee)
-	//插入数据
+	//插入数据到Mysql
 	insert_sql := "insert into erp_employee_info (chinese_name,english_name,position_name,birthday,create_time) values (?,?,?,?,?);"
 	affect_map := database.Exec(db, insert_sql, employee.Chinese_name, employee.English_name, employee.Position_name, employee.Birthday, time.Now().Format("2006-01-02 15:04:05"))
+	//插入数据到ES
+	jsonMap := make(map[string]interface{})
+	jsonMap["chinese_name"] = employee.Chinese_name
+	jsonMap["english_name"] = employee.English_name
+	jsonMap["position_name"] = employee.Position_name
+	jsonMap["birthday"] = employee.Birthday
+	jsonMap["status"] = "1"
+	jsonMap["create_time"] = time.Now().Format("2006-01-02 15:04:05")
+	client :=database.ConnectES();
+	jsonData, err := json.Marshal(jsonMap)
+	if err != nil {
+		fmt.Println("JSON ERR:", err)
+	}
+
+	fmt.Println(jsonData)  //打印json数据 []bytes 类型
+	index := "erp_employee_info"
+	id := affect_map["last_id"]
+	esId := database.CreateESDoc(client, string(jsonData), index, strconv.FormatInt(id,10))
+	es_insert_id, _:= strconv.ParseInt(esId, 10, 64)
+	affect_map["es_insert_id"] = es_insert_id
+
+	//返回处理结果
 	context.JSON(200, gin.H{
 		"result": affect_map,
 	})
@@ -63,6 +87,8 @@ func GetEmployeeList(context *gin.Context) {
 	println(">>>> get user by id and name action start <<<<")
 	// 获取请求参数
 	// 查询数据库
+
+
 	select_sql := "select * from erp_employee_info";
 	data_map, err := database.SelectSome(db, select_sql)
 	checkError(err)
