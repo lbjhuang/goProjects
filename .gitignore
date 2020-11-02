@@ -3,6 +3,7 @@
 *.xml
 src/library_pro/.idea/library_plus.iml
 .idea/vcs.xml
+pkg
 
 
 src/library_pro/Logs/library_run_log.log
