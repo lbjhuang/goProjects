@@ -19,7 +19,6 @@ func main() {
 		fmt.Println(err.Error())
 	}
 
-
 	gin.DefaultWriter = io.MultiWriter(f)
 	gin.DefaultErrorWriter = io.MultiWriter(f)
 	// Engine

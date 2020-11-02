@@ -88,7 +88,6 @@ func Exec(db *sql.DB, sql_str string, values ...interface{}) (affect map[string]
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(values)
 	res, err := stmt.Exec(values...)
 	if err != nil {
 		log.Fatal(err)
