@@ -4,3 +4,4 @@ src/library_pro/.idea/library_plus.iml
 src/library_pro/Logs/library_run_log.log
 src/library_pro/go.mod
 src/library_pro/go.sum
+.idea/workspace.xml
