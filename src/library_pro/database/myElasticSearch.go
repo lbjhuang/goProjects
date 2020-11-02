@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-//连接集群
+//连接ES集群
 func ConnectES() *elastic.Client {
 	//集群连接部分参数配置
 	var options []elastic.ClientOptionFunc
@@ -76,7 +76,7 @@ func FindOne(client *elastic.Client, index string, id string) interface{} {
 
 
 
-//搜索
+//搜索例子
 //func query() {
 //	var res *elastic.SearchResult
 //	var err error

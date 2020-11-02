@@ -13,7 +13,7 @@ import (
 
 
 func main() {
-	fmt.Println("运行开始...")
+	fmt.Println("main函数运行开始...")
 	f,err :=os.Create(config.RUN_LOG_PATH)
 	if err != nil{
 		fmt.Println(err.Error())
