@@ -73,6 +73,10 @@ func GetById(context *gin.Context) {
 	println(">>>> get user by id and name action start <<<<")
 	// 获取请求参数
 	id := context.Param("id")
+	sendTopicMessage()
+
+
+
 	// 查询数据库
 	data_map, err := database.SelectSome(db, "select * from  erp_employee_info where id = ?", id)
 	checkError(err)
