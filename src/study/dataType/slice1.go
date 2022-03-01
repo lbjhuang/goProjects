@@ -17,7 +17,7 @@ func main() {
 	hobby[3] = "kind"
 	//hobby[4] = "kind2"   //初始第5个元素为空，后面追加则从第6个元素开始
 	hobby = append(hobby, "man")  //追加元素  长度增加，容量自动扩充
-	hobby = append(hobby, "man")  //追加元素  长度增加，容量自动扩充
+	hobby = append(hobby, "man")  
 	hobby = append(hobby, "female")  //追加元素  长度增加，容量自动扩充
 
 	fmt.Println(hobby)
