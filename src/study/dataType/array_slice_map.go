@@ -39,4 +39,12 @@ func main() {
 	for i, n := range hobby {
 		fmt.Println(i, n)
 	}
+
+
+	/*删除map中的元素*/
+	delete(c, "Hello")  //删除Hello键
+	fmt.Println(c)
+	for k, v := range c {
+		fmt.Println(k, v)
+	}
 }
