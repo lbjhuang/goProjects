@@ -21,7 +21,7 @@ func main() {
 
 	hobby[0] = "basketball"
 	hobby[1] = "football"
-	//hobby[2] = "football"  //超出界限，会报错
+	//hobby[2] = "football"  //最多存2个值，超出界限，会报错
 
 	c := map[string]int{"Hello": 1, "World": 2} //map类型
 	for k, v := range c {
