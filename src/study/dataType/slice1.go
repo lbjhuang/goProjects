@@ -6,7 +6,7 @@ func main() {
 
 
 	var personnel = make([]string, 8) //切片，长度为8
-	var hobby = make([]string, 5, 6)  //切片，长度为4 容量为6
+	var hobby = make([]string, 5, 6)  //切片，长度为5 容量为6
 
 	//hobby[2] = "football"
 	personnel[0] = "sunny"
@@ -15,10 +15,14 @@ func main() {
 	hobby[1] = "kind"
 	hobby[2] = "kind"
 	hobby[3] = "kind"
+	//hobby[4] = "kind2"   //初始第5个元素为空，后面追加则从第6个元素开始
+	hobby = append(hobby, "man")  //追加元素  长度增加，容量自动扩充
 	hobby = append(hobby, "man")  //追加元素  长度增加，容量自动扩充
 	hobby = append(hobby, "female")  //追加元素  长度增加，容量自动扩充
 
-	fmt.Println(len(hobby))
+	fmt.Println(hobby)
+	fmt.Println(len(hobby))  //里面元素格式
+	fmt.Println(cap(hobby))  //里面元素格式
 
 
 	fmt.Println(personnel)
