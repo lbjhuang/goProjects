@@ -52,6 +52,6 @@ func main() {
 	// 切片判定空的结果
 	fmt.Println(strList == nil)
 	fmt.Println(numList == nil)
-	fmt.Println(numListEmpty == nil)
+	fmt.Println(numListEmpty == nil)  //空切片不等于nil
 
 }
