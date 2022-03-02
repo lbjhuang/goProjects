@@ -21,4 +21,7 @@ func main() {
 	fmt.Println(*c)   //108
 	fmt.Println(c)
 
+	*c = 109
+	fmt.Println(d)   //109
+
 }
