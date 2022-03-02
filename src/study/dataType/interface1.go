@@ -26,8 +26,9 @@ func (c Cat) speak() {        //三个结构体都实现了接口的speak方法
 func (d Dog) speak() {
 	fmt.Println(d.name,"is 旺旺")
 }
+
 func (h human) speak() {
-	fmt.Println(h.name,"is 哦哦")
+	fmt.Println(h.name,"is 喔喔")
 }
 
 func da(x Speaker)  {
