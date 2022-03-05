@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//水仙花数计算
 func shuixianhua(n int) bool {
 	if n < 100 {
 		return false
