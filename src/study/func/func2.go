@@ -15,12 +15,21 @@ func sumandsem1(a, b int) (sum int, sem int) {
 	return
 }
 
-//可变参数，会用数组接收
-func sumandsem5(b ... int) (int)  {
+//可变参数，会用数组接收,取名b
+func sum5(b ... int) (int)  {
 	sum := 0
 	//遍历数组计算相加
 	for _, value := range b {
-		sum += value
+		sum = sum + value
+	}
+	return sum
+}
+
+func sum6(a int, b ... int) (int)  {
+	sum := a
+	//遍历数组计算相加
+	for _, value := range b {
+		sum = sum + value
 	}
 	return sum
 }
@@ -33,6 +42,9 @@ func main() {
 	c,_ := sumandsem1(a, b)
 	fmt.Println("main", c)
 
-	g:= sumandsem5(a, b,5,6)
+	g:= sum5(a, b,5,6)
 	fmt.Println("main", g)
+
+	h:= sum6(a,5,6)
+	fmt.Println("main", h)
 }
