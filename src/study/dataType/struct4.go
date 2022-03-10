@@ -19,7 +19,7 @@ type Student struct {
 
 func main() {
 	var s = Student{
-		OnePerson{1, "james", 22}, 2, "class1", 98.5}
+		OnePerson{1, "james", 22}, 2, "class1", 98.565}
 
-	fmt.Printf("one student named %s, his score is %f, he is from %s and he is just %d", s.name, s.score, s.className, s.age)
+	fmt.Printf("one student named %s, his score is %.1f, he is from %s and he is just %d", s.name, s.score, s.className, s.age)
 }
